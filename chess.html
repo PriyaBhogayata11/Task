@@ -24,26 +24,37 @@
       }
     </script> -->
     <script type="text/javascript">
+      //create center tag
       var center = document.createElement("center");
+      //create table
       var table = document.createElement("table");
       for (var i = 0; i < 8; i++) {
+        //create row
         let tr = document.createElement("tr");
         for (var j = 0; j < 8; j++) {
+          //create column
           var td = document.createElement("td");
+          //if cell found even the put background white
           if ((i + j) % 2 == 0) {
             td.setAttribute("class", "cell white");
             tr.appendChild(td);
           } else {
+            //if cell found odd put background black
             td.setAttribute("class", "cell black");
+            //append column in row
             tr.appendChild(td);
           }
         }
+        //append rows in table
         table.appendChild(tr);
       }
+      //append table in canter tag
       center.appendChild(table);
+      //set attributes of cell spacing and width
       table.setAttribute("cellspacing", "0");
       table.setAttribute("width", "270px");
 
+      //append center tag in html body
       document.body.appendChild(center);
     </script>
   </body>

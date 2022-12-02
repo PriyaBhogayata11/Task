@@ -5,32 +5,51 @@
   </head>
   <body>
     <h1>Fibonacci series</h1>
-    <label>Enter a number:</label> <input id="number" /> <br /><br />
-    <button class="button" onclick="result()">Print</button>
+    <label>Enter a number:</label> <input id="number" type="number" />
+    <br /><br />
+    <button
+      class="button"
+      onclick="fibonacci(document.getElementById('number').value)"
+    >
+      Print
+    </button>
     <p id="message"></p>
 
     <script>
+      //define function
       function fibonacci(num) {
+        //if number is negative
+        if (num < 0) {
+          document.getElementById("message").innerHTML =
+            "Please enter positive number";
+        }
+        //declare array to store result
         let res = [];
         var num1 = 0;
         var num2 = 1;
+        //push initial value for fibbo
         res.push(num1, num2);
         var sum;
         var i = 0;
+        //loop for count sum for next term
         for (i = 2; i < num; i++) {
           sum = num1 + num2;
           num1 = num2;
           num2 = sum;
+          //push sum in resultant array
           res.push(sum);
+          //print result
           document.getElementById("message").innerHTML = res;
         }
 
         return num2;
       }
-      function result() {
-        var num = document.getElementById("number").value;
-        var f = fibonacci(num);
-      }
+      // function result() {
+      //   //get number from input box
+      //   var num = document.getElementById("number").value;
+      //   //call function
+      //   var f = fibonacci(num);
+      // }
     </script>
   </body>
 </html>

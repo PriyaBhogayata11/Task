@@ -5,27 +5,39 @@
   </head>
   <body>
     <h1>Factorial Number</h1>
-    <label>Enter a number:</label> <input id="number" /> <br /><br />
+    <label>Enter a number:</label> <input id="number" type="number" />
+    <br /><br />
     <button class="button" onclick="result()">Print</button>
     <p id="message"></p>
 
     <script>
+      //define function
       function fact(num) {
+        //if number is negative
         if (num < 0) {
-          document.getElementById("message").innerHTML =
-            "Please enter positive number";
-        }
-        if (num == 0) {
-          return 1;
+          return false;
         } else {
-          return num * fact(num - 1);
+          //if number is 0 then return 1 else call function with number-1
+          if (num === 0) {
+            return 1;
+          } else {
+            return num * fact(num - 1);
+          }
         }
       }
       function result() {
+        //get number from html input box
         var num = document.getElementById("number").value;
+        //call function
         var f = fact(num);
-        document.getElementById("message").innerHTML =
-          "The factorial of the number " + num + " is: " + f;
+        if (f === false) {
+          document.getElementById("message").innerHTML =
+            "Please enter positive number";
+        } else {
+          //print result
+          document.getElementById("message").innerHTML =
+            "The factorial of the number " + num + " is: " + f;
+        }
       }
     </script>
   </body>
