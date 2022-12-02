@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Chessboard</title>
+  </head>
+  <body>
+    <h1>Chessboard</h1>
+    <!-- <div id="board"></div>
+    <script type="text/javascript">
+      var cellBoard = document.getElementById("board");
+      for (var i = 0; i < 8; i++) {
+        for (var j = 0; j < 8; j++) {
+          var cell = document.createElement("div");
+          cell.className = "cell";
+          if ((i + j) % 2 == 0) {
+            cell.style.backgroundColor = "#000";
+          }
+          cellBoard.appendChild(cell);
+        }
+      }
+    </script> -->
+    <script type="text/javascript">
+      var center = document.createElement("center");
+      var table = document.createElement("table");
+      for (var i = 0; i < 8; i++) {
+        let tr = document.createElement("tr");
+        for (var j = 0; j < 8; j++) {
+          var td = document.createElement("td");
+          if ((i + j) % 2 == 0) {
+            td.setAttribute("class", "cell white");
+            tr.appendChild(td);
+          } else {
+            td.setAttribute("class", "cell black");
+            tr.appendChild(td);
+          }
+        }
+        table.appendChild(tr);
+      }
+      center.appendChild(table);
+      table.setAttribute("cellspacing", "0");
+      table.setAttribute("width", "270px");
+
+      document.body.appendChild(center);
+    </script>
+  </body>
+</html>
