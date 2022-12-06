@@ -9,10 +9,13 @@
   </head>
   <body>
     <h1>Chessboard</h1>
-    <!-- <div id="board"></div>
+    <div id="board"></div>
     <script type="text/javascript">
       var cellBoard = document.getElementById("board");
       for (var i = 0; i < 8; i++) {
+        var rowVar = document.createElement("div");
+        rowVar.className = "rows";
+
         for (var j = 0; j < 8; j++) {
           var cell = document.createElement("div");
           cell.className = "cell";
@@ -21,9 +24,10 @@
           }
           cellBoard.appendChild(cell);
         }
+        cellBoard.appendChild(rowVar);
       }
-    </script> -->
-    <script type="text/javascript">
+    </script>
+    <!-- <script type="text/javascript">
       //create center tag
       var center = document.createElement("center");
       //create table
@@ -56,6 +60,6 @@
 
       //append center tag in html body
       document.body.appendChild(center);
-    </script>
+    </script> -->
   </body>
 </html>
