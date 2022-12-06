@@ -18,19 +18,32 @@
     <script>
       //define function
       function fibonacci(num) {
+        //declare array to store result
+        let res = [];
+        var num1 = 0;
+        var num2 = 1;
         //if number is negative
         if (num < 0) {
           document.getElementById("message").innerHTML =
             "Please enter positive number";
         }
-        //declare array to store result
-        let res = [];
-        var num1 = 0;
-        var num2 = 1;
-        //push initial value for fibbo
-        res.push(num1, num2);
+        //if number is 0
+        if (num == 0) {
+          document.getElementById("message").innerHTML =
+            "Please enter number greater than zero";
+        }
+        if (num == 1) {
+          res.push(num1);
+          document.getElementById("message").innerHTML = res;
+        }
+        if (num == 2) {
+          res.push(num1, num2);
+          document.getElementById("message").innerHTML = res;
+        }
+
         var sum;
         var i = 0;
+        res.push(num1, num2);
         //loop for count sum for next term
         for (i = 2; i < num; i++) {
           sum = num1 + num2;
@@ -41,7 +54,6 @@
           //print result
           document.getElementById("message").innerHTML = res;
         }
-
         return num2;
       }
       // function result() {
